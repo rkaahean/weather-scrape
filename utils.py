@@ -7,4 +7,11 @@ def format_url(url, city, api):
     :param api:
     :return: Finished URL ready for querying
     """
-    return url.format(city, api)
+    return "http://" + url.format(city, api)
+
+
+WEATHER_PARAMS = {
+    'main': ['temp', 'temp_min', 'temp_max', 'humidity', 'pressure'],
+    'weather': ['description']
+}
+
