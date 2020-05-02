@@ -2,8 +2,11 @@ import requests
 from datetime import date
 import logging
 import configparser
+import pandas as pd
+import json
 
-from constants import API_CITY_FORECAST
+from constants import API_CITY_FORECAST, CITY_LIST
+from utils import format_url
 
 """
 Setting up logging.
@@ -33,7 +36,18 @@ except KeyError:
 """
 Hitting the api.
 """
-request_url = "http://" + API_CITY_FORECAST.format("Mumbai", API_KEY)
-response = requests.get(request_url)
-print(response)
+data = []
+for city in CITY_LIST:
+    url = format_url(API_CITY_FORECAST, city, API_KEY)
+    response = requests.get(url)
+    data = data + [response.content]
 
+df = pd.DataFrame(data)
+for dt in data:
+    json_data = json.loads(dt)
+    data_point = json_data['list']
+
+    for data in data_point:
+        print(data)
+
+print(format_url(API_CITY_FORECAST, city, API_KEY))
