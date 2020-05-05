@@ -17,7 +17,7 @@ sc_log.setLevel(logging.DEBUG)
 day = date.today()
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
 
-handler = logging.FileHandler('logs/' + str(day) + '.log')
+handler = logging.FileHandler('logs/scrape/' + str(day) + '.log')
 sc_log.addHandler(handler)
 
 """
