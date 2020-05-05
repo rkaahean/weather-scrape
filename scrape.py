@@ -20,7 +20,6 @@ formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
 handler = logging.FileHandler('logs/' + str(day) + '.log')
 sc_log.addHandler(handler)
 
-
 """
 Loading in the Key.
 """
@@ -36,18 +35,25 @@ except KeyError:
 """
 Hitting the api.
 """
-data = []
+
 for city in CITY_LIST:
     url = format_url(API_CITY_FORECAST, city, API_KEY)
     response = requests.get(url)
-    data = data + [response.content]
-
-df = pd.DataFrame(data)
-for dt in data:
-    json_data = json.loads(dt)
+    json_data = json.loads(response.content)
     data_point = json_data['list']
 
-    for data in data_point:
-        print(data)
+    for item in data_point:
+        item_data_dict = {
+            'time': None,
+            'city': city,
+            'temp': None,
+            'pressure': None,
+        }
+        main_item = item['main']
+
+        item_data_dict['time'] = item['dt']
+        item_data_dict['temp'] = main_item['temp']
+        item_data_dict['pressure'] = main_item['pressure']
+        print(item_data_dict)
 
 print(format_url(API_CITY_FORECAST, city, API_KEY))
