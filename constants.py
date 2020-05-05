@@ -11,3 +11,5 @@ CITY_LIST = [
     'Dubai',
     'Chennai'
 ]
+
+FILE_NAME = 'data.csv'
