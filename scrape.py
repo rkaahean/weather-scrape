@@ -5,7 +5,7 @@ import configparser
 import pandas as pd
 import json
 
-from constants import API_CITY_FORECAST, CITY_LIST
+from constants import API_CITY_FORECAST, CITY_LIST, FILE_NAME
 from utils import format_url
 
 """
@@ -36,9 +36,14 @@ except KeyError:
 Hitting the api.
 """
 
+weather_data = []
 for city in CITY_LIST:
     url = format_url(API_CITY_FORECAST, city, API_KEY)
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except requests.exceptions.RequestException:
+        sc_log.exception("Something went wrong in querying the API.")
+
     json_data = json.loads(response.content)
     data_point = json_data['list']
 
@@ -48,12 +53,22 @@ for city in CITY_LIST:
             'city': city,
             'temp': None,
             'pressure': None,
+            'humidity': None,
+            'desc': None,
         }
         main_item = item['main']
+        weather_item = item['weather'][0]
 
         item_data_dict['time'] = item['dt']
         item_data_dict['temp'] = main_item['temp']
         item_data_dict['pressure'] = main_item['pressure']
-        print(item_data_dict)
+        item_data_dict['humidity'] = main_item['humidity']
+        item_data_dict['desc'] = weather_item['description']
 
-print(format_url(API_CITY_FORECAST, city, API_KEY))
+        weather_data.append(item_data_dict)
+
+weather_data = pd.DataFrame(weather_data)
+weather_data.to_csv(FILE_NAME)
+
+
+
