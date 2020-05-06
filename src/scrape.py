@@ -1,12 +1,16 @@
-import requests
-from datetime import date
-import logging
 import configparser
-import pandas as pd
 import json
+import logging
+import os
+import sys
+from datetime import date
+import pandas as pd
+import requests
 
 from src.constants import API_CITY_FORECAST, CITY_LIST, FILE_NAME
 from src.utils import format_url
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 """
 Setting up logging.
@@ -17,7 +21,7 @@ sc_log.setLevel(logging.DEBUG)
 day = date.today()
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
 
-handler = logging.FileHandler('../logs/scrape/' + str(day) + '.log')
+handler = logging.FileHandler('logs/scrape/' + str(day) + '.log')
 sc_log.addHandler(handler)
 
 """
@@ -25,7 +29,7 @@ Loading in the Key.
 """
 sc_log.log(logging.DEBUG, "Getting API-KEY")
 config = configparser.ConfigParser()
-config.read('../config.ini')
+config.read('config.ini')
 
 try:
     API_KEY = config['KEY']['API-KEY']
@@ -69,6 +73,3 @@ for city in CITY_LIST:
 
 weather_data = pd.DataFrame(weather_data)
 weather_data.to_csv(FILE_NAME)
-
-
-
