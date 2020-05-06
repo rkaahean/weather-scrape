@@ -5,8 +5,8 @@ import configparser
 import pandas as pd
 import json
 
-from constants import API_CITY_FORECAST, CITY_LIST, FILE_NAME
-from utils import format_url
+from src.constants import API_CITY_FORECAST, CITY_LIST, FILE_NAME
+from src.utils import format_url
 
 """
 Setting up logging.

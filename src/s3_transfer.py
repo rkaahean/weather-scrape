@@ -4,7 +4,7 @@ import logging
 
 from datetime import date
 from botocore.exceptions import NoCredentialsError
-from constants import FILE_NAME
+from src.constants import FILE_NAME
 
 
 """
