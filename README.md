@@ -30,6 +30,11 @@ The command to run all these:
 - Ensure python3 is being used. ```alias python=python3```
 - Create an environment for everything to be present (docker?). 
 - All of the packages installation should be in the docker config.
+- Build on a Spark Framework.
+- Deploy on ECS
+- Connect to a some sort of Load Balancer.
+- Try Apache Kafka.
+- Built a front end with Flask.
 
 ## Running the python files.
 
