@@ -1,0 +1,48 @@
+Getting API-KEY
+Please define the key in the 'KEY' section, with 'API-KEY' key.
+Traceback (most recent call last):
+  File "C:/Users/ranja/PycharmProjects/weather-scrape/src/scrape.py", line 31, in <module>
+    API_KEY = config['KEY']['API-KEY']
+  File "C:\Users\ranja\Anaconda3\lib\configparser.py", line 958, in __getitem__
+    raise KeyError(key)
+KeyError: 'KEY'
+Getting API-KEY
+Please define the key in the 'KEY' section, with 'API-KEY' key.
+Traceback (most recent call last):
+  File "C:/Users/ranja/PycharmProjects/weather-scrape/src/scrape.py", line 31, in <module>
+    API_KEY = config['KEY']['API-KEY']
+  File "C:\Users\ranja\Anaconda3\lib\configparser.py", line 958, in __getitem__
+    raise KeyError(key)
+KeyError: 'KEY'
+Getting API-KEY
+Please define the key in the 'KEY' section, with 'API-KEY' key.
+Traceback (most recent call last):
+  File "C:/Users/ranja/PycharmProjects/weather-scrape/src/scrape.py", line 31, in <module>
+    API_KEY = config['KEY']['API-KEY']
+  File "C:\Users\ranja\Anaconda3\lib\configparser.py", line 958, in __getitem__
+    raise KeyError(key)
+KeyError: 'KEY'
+Getting API-KEY
+Getting API-KEY
+Getting API-KEY
+Please define the key in the 'KEY' section, with 'API-KEY' key.
+Traceback (most recent call last):
+  File "src\scrape.py", line 33, in <module>
+    API_KEY = config['KEY']['API-KEY']
+  File "C:\Users\ranja\Anaconda3\lib\configparser.py", line 958, in __getitem__
+    raise KeyError(key)
+KeyError: 'KEY'
+Getting API-KEY
+Getting API-KEY
+Getting API-KEY
+Getting API-KEY
+Getting API-KEY
+Please define the key in the 'KEY' section, with 'API-KEY' key.
+Traceback (most recent call last):
+  File "src\scrape.py", line 36, in <module>
+    API_KEY = config['KEY']['API-KEY']
+  File "C:\Users\ranja\Anaconda3\lib\configparser.py", line 958, in __getitem__
+    raise KeyError(key)
+KeyError: 'KEY'
+Getting API-KEY
+Getting API-KEY
