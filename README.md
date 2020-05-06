@@ -38,3 +38,5 @@ The command to run all these:
 ## Issues
 
 - Need to fix import structure. ```scrape.py``` does not run from the folder.
+- Need to create a logging structure in the setup. For now, committing the log folders.
+- Need to automatically create a config.ini file. :
