@@ -12,4 +12,4 @@ CITY_LIST = [
     'Chennai'
 ]
 
-FILE_NAME = '../sample/data.csv'
+FILE_NAME = 'data.csv'
