@@ -7,10 +7,10 @@ from datetime import date
 import pandas as pd
 import requests
 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from src.constants import API_CITY_FORECAST, CITY_LIST, FILE_NAME
 from src.utils import format_url
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 """
 Setting up logging.
