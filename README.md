@@ -3,27 +3,8 @@ An ETL Pipeline to query data from a Weather API and process.
 
 ## EC2 Setup.
 
-These are commands that are being run on a Ubuntu 20.04 LTS.
-Things that need to be present: 
-
-Upgrading everything first:
-```sudo apt-get update && sudo apt-get upgrade```
-
-- git: ```sudo apt-get install git```
-- python3 : ```sudo apt install python3```
-- pip : ```sudo apt install python3-pip```
-
-Use python3 and pip3 always by default.
-```
-alias pip=pip3
-alias python=python3
-```
-
-- wheel : ```pip install wheel```
-- aws-cli : ```pip install awscli --upgrade --user```
-
-The command to run all these:
-```pip install --upgrade --ignore-installed -r requirements.txt```
+No setup required, docker takes care of everything.
+Built on ubuntu 18.04 image. Python 3.6.
 
 ## Things to do
 
