@@ -6,6 +6,12 @@ An ETL Pipeline to query data from a Weather API and process.
 No setup required, docker takes care of everything.
 Built on ubuntu 18.04 image. Python 3.6.
 
+## Configuration
+
+1. Placed config.ini file in the top level directory.
+2. Copy the Openweather API KEY.
+3. Copy the AWS Access Key and Secret Access Key.
+
 ## Things to do
 
 - Ensure python3 is being used. ```alias python=python3```
