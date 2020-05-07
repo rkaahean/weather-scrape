@@ -1,11 +1,14 @@
 import boto3
 import configparser
 import logging
-
 from datetime import date
 from botocore.exceptions import NoCredentialsError
-from src.constants import FILE_NAME
+import os
+import sys
 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from src.constants import FILE_NAME
 
 """
 Setting up logging.
