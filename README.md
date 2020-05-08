@@ -22,8 +22,9 @@ Built on ubuntu 18.04 image. Python 3.6.
 - Build on a Spark Framework.
 - Deploy on ECS
 - Connect to a some sort of Load Balancer.
-- Try Apache Kafka.
+- Try Apache Kafka / Airflow.
 - Built a front end with Flask.
+- Amazon ECS.
 
 ## Running the python files.
 
