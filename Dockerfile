@@ -10,8 +10,13 @@ RUN alias python=python3 && alias pip=pip3
 RUN git clone https://github.com/rkaahean/weather-scrape.git ~/app
 
 COPY requirements.txt /tmp/
+COPY config.ini /root/app/
 
 RUN pip3 install --upgrade --ignore-installed -r /tmp/requirements.txt
+
+WORKDIR /root/app
+
+ENTRYPOINT ["python3"]
 
 
 
