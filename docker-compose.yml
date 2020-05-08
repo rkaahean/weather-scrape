@@ -1,0 +1,7 @@
+version: '3'
+services:
+  fetch:
+    build: .
+    command: src/scrape.py
+
+
