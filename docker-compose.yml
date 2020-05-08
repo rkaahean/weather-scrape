@@ -2,6 +2,6 @@ version: '3'
 services:
   fetch:
     build: .
-    command: src/scrape.py
+    command: bash -c "python3 src/scrape.py && python3 src/s3_transfer.py"
 
 
