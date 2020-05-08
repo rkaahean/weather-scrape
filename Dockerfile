@@ -16,7 +16,7 @@ RUN pip3 install --upgrade --ignore-installed -r /tmp/requirements.txt
 
 WORKDIR /root/app
 
-ENTRYPOINT ["python3"]
+# ENTRYPOINT ["python3"]
 
 
 
