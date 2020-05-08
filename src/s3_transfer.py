@@ -17,7 +17,8 @@ from src.constants import FILE_NAME
 Setting up s3 destination structure.
 """
 day = datetime.now()
-S3_FILE_KEY = str(day.year) + '/' + str(day.month) + '/' + str(day.hour) + '.csv'
+S3_FILE_KEY = str(day.year) + '/' + str(day.month) + '/' \
+              + str(day.day) + '/' + str(day.hour) + '.csv'
 
 """
 Setting up logging.
@@ -27,7 +28,7 @@ sc_log.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
 
-DIRECTORY = 'logs/transfer/' + str(day.year) + '/' + str(day.month) + '/'
+DIRECTORY = 'logs/transfer/' + str(day.year) + '/' + str(day.month) + '/' + str(day.day) + '/'
 Path(DIRECTORY).mkdir(parents=True, exist_ok=True)
 
 handler = logging.FileHandler(DIRECTORY + str(day.hour) + '.log')
