@@ -5,10 +5,19 @@ from datetime import datetime
 from botocore.exceptions import NoCredentialsError
 import os
 import sys
+from pathlib import Path
+
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from src.constants import FILE_NAME
+
+
+"""
+Setting up s3 destination structure.
+"""
+day = datetime.now()
+S3_FILE_KEY = str(day.year) + '/' + str(day.month) + '/' + str(day.hour) + '.csv'
 
 """
 Setting up logging.
@@ -16,10 +25,12 @@ Setting up logging.
 sc_log = logging.getLogger(__name__)
 sc_log.setLevel(logging.DEBUG)
 
-day = datetime.now()
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
 
-handler = logging.FileHandler('logs/transfer/' + str(day) + '.log')
+DIRECTORY = 'logs/transfer/' + str(day.year) + '/' + str(day.month) + '/'
+Path(DIRECTORY).mkdir(parents=True, exist_ok=True)
+
+handler = logging.FileHandler(DIRECTORY + str(day.hour) + '.log')
 sc_log.addHandler(handler)
 
 """
@@ -34,12 +45,6 @@ SECRET_KEY = config['AWS']['SECRET_KEY']
 """
 File related constants
 """
-current_year = day.year
-current_month = day.month
-current_hour = day.hour
-
-S3_FILE_KEY = str(day.year) + '/' + str(day.month) + '/' + str(day.hour)
-
 s3 = boto3.client('s3', aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY)
 
 try:
