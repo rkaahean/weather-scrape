@@ -6,11 +6,13 @@ An ETL Pipeline to query data from a Weather API and process.
 No setup required, docker takes care of everything.
 Built on ubuntu 18.04 image. Python 3.6.
 
-## Configuration
+## Setup & configuration
 
-1. Placed config.ini file in the top level directory.
-2. Copy the Openweather API KEY.
-3. Copy the AWS Access Key and Secret Access Key.
+1. Clone repository.
+2. Placed config.ini file in the top level directory.
+3. Copy the Openweather API KEY.
+4. Copy the AWS Access Key and Secret Access Key.
+5. ```docker-compose up.```
 
 ## Things to do
 
@@ -26,9 +28,3 @@ Built on ubuntu 18.04 image. Python 3.6.
 ## Running the python files.
 
 - ```python src\scrape.py```
-
-## Issues
-
-- Need to fix import structure. ```scrape.py``` does not run from the folder.
-- Need to create a logging structure in the setup. For now, committing the log folders.
-- Need to automatically create a config.ini file. :
